@@ -13,7 +13,16 @@ To printf 3 digits with leading zeros use %03d in the format string.
 
 #include <stdio.h>
 
+void pwetty(int n){
+  if(n <= 0){
+    return;
+  }
+  pwetty(n/1000);
+  printf("%03d ", n%1000);
+}
+
 int main(){
+  pwetty(1000);
 
 
   return 0;

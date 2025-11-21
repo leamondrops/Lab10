@@ -7,10 +7,20 @@ To print for example 1234 in base 10 numeral system first the 1234/10 (123) shou
 
 */
 
-
 #include <stdio.h>
 
+
+void numsys(int num, int base){
+  if(num <= 0){
+    return;
+  }
+  numsys(num/base, base);
+  printf("%d", num%base);
+
+}
+
 int main(){
+  numsys(1234, 10);
 
 
   return 0;
